@@ -6,6 +6,7 @@ A basic ToDo/Reminders desktop application using React, Electron, and NodeJS
 * NodeJS
 * Yarn
 
+### Installing
 ***./client***
 ```
 yarn install
@@ -16,4 +17,14 @@ yarn add electron --dev
 ```
 npm install express
 npm install cors
+```
+
+### Running
+***./client***
+```
+yarn electron:serve
+```
+***./server***
+```
+node server.js
 ```
