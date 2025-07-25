@@ -1,0 +1,115 @@
+.App {
+  text-align: center;
+  color: #5f1d2d;
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.task-box {
+  background-image: linear-gradient(horizontal, #ff8da8, #000000);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #8f364b;
+}
+
+.glass, .add, .create {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-background-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  color: #5f1d2d;
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.add, .create {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.add {
+  display: inline-flex;
+  align-self: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.input-box {
+  margin-top: 20px;
+}
+
+.create {
+  display: inline-flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+
+  margin-right: 7px;
+  margin-bottom: 5px;
+}
+
+.create-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.complete {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  margin-right: 7px;
+  margin-bottom: 5px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #925363;
+}
+
+.complete:hover {
+  color: #5f1d2d;
+  cursor: pointer;
+}
+
+.input {
+  border: none;
+  background: none;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 20px;
+  margin-right: 20;
+  margin-bottom: 3px;
+}
+
+.input::placeholder, .input {
+  color: #5f1d2d;
+}
+
+.input:focus {
+  outline: none;
+}
