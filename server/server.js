@@ -29,25 +29,18 @@ app.post("/createTask", (req, res) => {
 });
 
 app.delete("/deleteTask", (req, res) => {
-    const { task } = req.body;
-    remove = openTasks.findIndex(t => t === task);
-    if (remove === -1) {
+    const { title, details } = req.body;
+    let task = { title, details };
+    i = openTasks.indexOf(task);
+    if (i > -1) {
+        openTasks.splice(i, 1);
         completedTasks.push(task);
-        openTasks.splice(remove, 1);
-        res.status(200).json({ message: "Task deleted successfully"});
+        res.status(200).json({ message: "Task completed" });
     } else {
-        res.status(400).json({ message: "Task not found"});
+        res.status(404).json({ message: "Task not found" });
     }
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on https://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-function main() {
-    return null;
-}
-
-if(require.main === module) {
-    main();
-}
