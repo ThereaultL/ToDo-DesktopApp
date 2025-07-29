@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Task from './Task';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./App.css";
 
 
@@ -22,10 +24,7 @@ export default function TaskList() {
     }
 
     const listTasks = tasks.map(task => {
-        return <div className="task">
-                <h3>{task.title}</h3>
-                <p>{task.details}</p>
-            </div>
+        return <Task task={task}/>
     });
     
 
