@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Task from './Task';
 import "./App.css";
 
 
@@ -13,6 +14,12 @@ export default function TaskList() {
         setTasks(data);
         };
         fetchTasks();
+        let interval = setInterval(() => fetchTasks(), 5000);
+
+        return (() => { //we return a "cleanup" function that will be called on unmount, since we've set an interval we also need to clear it later.
+            clearInterval(interval)
+        })
+
     }, []);
 
     const emptyTaskList = () => {
@@ -22,17 +29,13 @@ export default function TaskList() {
     }
 
     const listTasks = tasks.map(task => {
-        return <div className="task">
-                <h3>{task.title}</h3>
-                <p>{task.details}</p>
-            </div>
+            return <Task task={task}/>
     });
-    
 
-  return (
-    <div className="container">
-        {emptyTaskList()}
-        {listTasks}
-    </div>
-  )
+    return (
+        <div className="container">
+            {emptyTaskList()}
+            {listTasks}
+        </div>
+    )
 }
