@@ -1,9 +1,13 @@
 import React from 'react'
+import './App.css';
 
 export default function Task({task}){
 
+    const [btnClass, setBtnClass] = React.useState("complete-button");
+
     const deleteTask = async () => {
-        alert("Delete was clicked");
+        setBtnClass("complete-button-clicked");
+
         const response = await fetch(
             "/deleteTask", {
             method: "DELETE",
@@ -21,13 +25,19 @@ export default function Task({task}){
         } else {
             alert("Failed to delete task");
         }
+
+        setBtnClass("complete-button");
     }
 
   return (
-    <div>
-        <h3>{task.title}</h3>
-        <button onClick={deleteTask}>Delete</button>
-        <p>{task.details}</p>
+    <div className="task-list">
+        <div class="task-box-left">
+            <p class="task-title">{task.title}</p>
+            <p class="task-details">{task.details}</p>
+        </div>
+        <div class="task-box-right">
+            <button class={btnClass} onClick={deleteTask}></button>
+        </div>
     </div>
   )
 }
