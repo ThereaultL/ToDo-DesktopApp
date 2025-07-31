@@ -3,8 +3,8 @@ import './App.css';
 
 export default function CreateTask() {
 
-    const [title, setTitle] = React.useState("Title");
-    const [details, setDetails] = React.useState("Details");
+    const [title, setTitle] = React.useState("");
+    const [details, setDetails] = React.useState("");
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
@@ -15,6 +15,10 @@ export default function CreateTask() {
     }
 
     const handleSubmit = async (e) => {
+        if(details === "Details") {
+            setDetails("");
+        }
+        
         e.preventDefault();
         
         const response = await fetch(
@@ -30,9 +34,9 @@ export default function CreateTask() {
         });
 
         if (response.ok) {
-            setTitle("Title");
-            setDetails("Details");
             alert("New task created successfully");
+            setTitle("");
+            setDetails("");
         } else {
             alert("Failed to create new task");
         }
@@ -41,10 +45,9 @@ export default function CreateTask() {
     return (
         <div className="input-box">
             <form class="create-box" onSubmit={handleSubmit}>
-                <input class="input" type="text" placeholder={title} onChange={handleTitleChange} required />
-                <input class="input" type="text" placeholder={details} onChange={handleDetailsChange} />
+                <input class="input" type="text" placeholder="Title" value={title} onChange={handleTitleChange} required />
+                <input class="input" type="text" placeholder="Details" value={details} onChange={handleDetailsChange} />
                 <button class="create" type="submit">Create</button>
-
             </form>
         </div>
     )
