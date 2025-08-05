@@ -10,6 +10,13 @@ app.use(express.json()); //parsing applicaiton and json
 let openTasks = [];
 let completedTasks = [];
 
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "todo_app" //make sure to create this database in your MySQL server
+});
+
 app.get("/openTasks", (req, res) => {
     res.json(openTasks);
 });
@@ -39,7 +46,6 @@ app.delete("/deleteTask", (req, res) => {
         res.status(404).json({ message: "Task not found" });
     }
 });
-
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

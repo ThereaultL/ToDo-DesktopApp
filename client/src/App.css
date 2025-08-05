@@ -1,6 +1,83 @@
-.App {
+.home {
   text-align: center;
   color: #5f1d2d;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  font-size: 30px;
+}
+
+.login-form {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.email, .password {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.email input, .password input {
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #5f1d2d;
+  outline: none;
+}
+
+.email input {
+  border-radius: 5px;
+  width: 250px;
+}
+
+.password input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 217.5px;
+}
+
+.password-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.password-box button {
+  padding: 9px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: solid 1px #2f1d22;
+  background-color: #f0f0f0;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+
+  background-color: #5f1d2d;
+  color: #ff809e;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .title {
@@ -18,7 +95,7 @@
   box-shadow: 0 4px 8px #8f364b;
 }
 
-.glass, .add, .create {
+.glass, .add, .create, .login-form {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-background-filter: blur(10px);
