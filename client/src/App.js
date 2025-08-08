@@ -1,17 +1,17 @@
-import React from 'react';
-import './App.css';
-import Login from './Login';
+import "./App.css";
+import Login from "./Login";
+import Home from "./Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
-
-  //<Routes>
-        //           <Route path="/" element={<TicketList />} />
-        //           <Route path="/TicketForm" element={<TicketForm />} />
-        //           <Route path="/TicketDetail" element={<TicketDetail />} />
-        // </Routes>
   return (
-      <div>
-        <Login />
-      </div>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }

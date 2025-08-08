@@ -20,14 +20,16 @@
   padding-right: 60px;
 }
 
-.email, .password {
+.email,
+.password {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.email input, .password input {
+.email input,
+.password input {
   padding: 10px;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -80,7 +82,15 @@
   cursor: pointer;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .title {
+  margin-top: 0px;
   font-size: 40px;
   margin-bottom: 5px;
 }
@@ -95,8 +105,16 @@
   box-shadow: 0 4px 8px #8f364b;
 }
 
-.glass, .add, .create, .login-form {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+.glass,
+.add,
+.create,
+.login-form,
+.logout {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
   backdrop-filter: blur(10px);
   -webkit-background-filter: blur(10px);
   border-radius: 20px;
@@ -120,19 +138,29 @@
   flex-direction: column;
 }
 
-.add, .create {
+.add,
+.create,
+.logout {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
-.add {
+.add,
+.logout {
   display: inline-flex;
   align-self: flex-start;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
+}
 
+.add {
   margin-left: 5px;
   margin-top: 5px;
+}
+
+.logout {
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .input-box {
@@ -183,7 +211,8 @@
   margin-bottom: 3px;
 }
 
-.input::placeholder, .input {
+.input::placeholder,
+.input {
   color: #5f1d2d;
 }
 
@@ -197,7 +226,7 @@
   margin-bottom: 10px;
   border-bottom: #5f1d2e30 solid 1px;
   display: flex;
-  flex-direction: row;      /* make children horizontal */
+  flex-direction: row; /* make children horizontal */
 }
 
 .task-box-left {
@@ -224,7 +253,7 @@
 }
 
 .task-box-right {
-  display: flex;  
+  display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   align-self: flex-start;
@@ -233,7 +262,8 @@
   margin-top: 10px;
 }
 
-.complete-button, .complete-button-clicked {
+.complete-button,
+.complete-button-clicked {
   border: #ff809eb5;
   border-style: solid;
   border-radius: 50%;
@@ -247,6 +277,7 @@
   padding: 8px;
 }
 
-.complete-button:hover, .complete-button-clicked {
+.complete-button:hover,
+.complete-button-clicked {
   background-color: #ff809e;
 }
