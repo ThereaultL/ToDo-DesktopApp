@@ -12,6 +12,7 @@ A basic ToDo/Reminders desktop application using React, Electron, and NodeJS
 yarn install
 yarn add @electron/remote
 yarn add electron --dev
+npm install react-icons --save
 ```
 ***./server***
 ```
