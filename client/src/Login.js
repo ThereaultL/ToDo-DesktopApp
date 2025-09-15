@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Navigate } from "react-router-dom";
+import "./Login.css";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);

@@ -11,37 +11,6 @@
   color: var(--primary-color);
 }
 
-.login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
-  font-size: 30px;
-}
-
-.login-form {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
-.create-new-account {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 10px;
-  text-decoration: underline;
-  font-size: 15px;
-  cursor: pointer;
-}
-.create-new-account:hover {
-  color: var(--hover-color);
-}
-
 .email,
 .password {
   display: flex;
