@@ -7,6 +7,8 @@ export default function Login() {
 
   const [eyeIcon, setEyeIcon] = useState(<IoEyeOutline />);
 
+  const [createAccountRedirect, setCreateAccountRedirect] = useState(false);
+
   const togglePasswordVisibility = (event) => {
     event.preventDefault();
     setShowPassword(!showPassword);
@@ -47,6 +49,10 @@ export default function Login() {
     return <Navigate to="/home" />;
   }
 
+  if (createAccountRedirect) {
+    return <Navigate to="/createAccount" />;
+  }
+
   return (
     <div className="login">
       <form onSubmit={handleSubmit} class="login-form">
@@ -72,6 +78,12 @@ export default function Login() {
         <button type="submit" class="login-button">
           Login
         </button>
+        <p
+          class="create-new-account"
+          onClick={() => setCreateAccountRedirect(true)}
+        >
+          Create an account
+        </p>
       </form>
     </div>
   );
